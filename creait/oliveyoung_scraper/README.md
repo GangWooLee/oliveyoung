@@ -82,11 +82,11 @@ URL 하나만 입력하면 모든 분석이 자동으로 완료됩니다:
 ### 1. 환경 설정
 
 ```bash
-# 의존성 설치
-pip install -r requirements.txt
+# uv로 의존성 설치
+uv sync
 
 # Playwright 브라우저 설치
-playwright install --with-deps chromium
+uv run playwright install --with-deps chromium
 
 # OpenAI API 키 설정
 cp .env.example .env
@@ -97,7 +97,7 @@ cp .env.example .env
 
 ```bash
 # 🎯 추천: 완전 자동화된 6단계 분석
-python agent_main.py
+uv run python agent_main.py
 ```
 
 URL을 입력하면 6단계 분석이 자동으로 실행됩니다:
@@ -112,14 +112,14 @@ URL을 입력하면 6단계 분석이 자동으로 실행됩니다:
 
 ```bash
 # 기본 스크래핑만 (AI 분석 제외)
-python main.py
+uv run python main.py
 ```
 
 ### 4. 분석 결과 확인
 
 ```bash
 # 데이터베이스 내용을 DataFrame으로 확인
-python db_to_dataframe_ex.py
+uv run python db_to_dataframe_ex.py
 ```
 
 ## 📊 데이터베이스 스키마
